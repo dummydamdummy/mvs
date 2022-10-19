@@ -1,0 +1,255 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Movie Poster Search</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7;" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //console.log($.getJSON("https://api.themoviedb.org/3/discover/movie?api_key=985cf39247295da2657f152566099ace"));
+            $('#search_query').focus(function () {
+                var full = $("#poster").has("img").length ? true : false;
+                if (full == false) {
+                    $('#poster').empty();
+                }
+            });
+            /* Get movies list of user entered search text */
+            var getPoster = function () {
+                $('#overview').empty();
+                $('#otherMovies').empty();
+                var film = $('#search_query').val();
+                if (film == '') {
+                    $('#poster').html('<div class="alert"><strong>Oops!</strong> Try adding something into the search field.</div>');
+                } else {
+                    $('#poster').html('<div class="alert"><strong>Loading...</strong></div>');
+                    $.getJSON("https://api.themoviedb.org/3/search/movie?api_key=985cf39247295da2657f152566099ace&query=" + film + "&callback=?", function (json) {
+
+                        if (json != "Nothing found.") {
+                            var filmDate = new Date();
+                            var allMovies = '<p style="color:orange;text-underline-position:below;">' + '<strong><u>Other Movies </u> </strong>' + '</p>';
+                            for (var i = 0; i < json.results.length; i++) {
+                                if (json.results[i].release_date != null && json.results[i].release_date != '') {
+                                    allMovies = allMovies + '&nbsp' + (i + 1) + '). ' + '<a style="color:lime" href="#">' + json.results[i].title + '(' + 'Year-' + json.results[i].release_date.substring(0, 4) + ', Rating-' + json.results[i].vote_average + ')' + '</a>' + '<br/>';
+                                }
+                                else {
+                                    allMovies = allMovies + '&nbsp' + (i + 1) + ') . ' + '<a style="color:lime" href="#">' + json.results[i].title + '(...?' + ', Rating-' + json.results[i].vote_average + ')' + '</a>' + '<br/>';
+                                }
+                            }
+                            $('#overview').append('');
+                            if (json.results.length >= 1) {
+                                $('#poster').html('<img src=\"http://image.tmdb.org/t/p/w500/' + json.results[0].poster_path + '\" class=\"img-responsive\" >');
+                                if (json.results[0].release_date != null) {
+                                    $('#overview').html('<p style="border-radius:15px 15px 15px 15px;"><strong><u>' + '"' + json.results[0].title + '(' + 'Year-' + json.results[0].release_date.substring(0, 4) + ', Rating-' + json.results[0].vote_average + ')' + '"' + ' Overview: </u></strong>' + json.results[0].overview + '</p>');
+                                }
+                                else {
+                                    $('#overview').html('<p style="border-radius:15px 15px 15px 15px;"><strong><u>' + '"' + json.results[0].title + '(...?' + ', Rating-' + json.results[0].vote_average + ')' + '"' + ' Overview: </u></strong>' + json.results[0].overview + '</p>');
+                                }
+
+                                $('#otherMovies').html('<p style="border-radius:15px 15px 15px 15px;color:lime"><strong><u>' + allMovies + '</u></strong></p>');
+                            }
+                        } else {
+                            $.getJSON("https://api.themoviedb.org/3/search/movie?api_key=985cf39247295da2657f152566099ace&query=goonies&callback=?", function (json) {
+
+                                $('#poster').html('<div class="alert"><p>We\'re afraid nothing was found for that search.</p></div><p>Perhaps you were looking for The Goonies?</p><img id="thePoster" src="http://image.tmdb.org/t/p/w500/' + json[0].poster_path + ' class="img-responsive" />');
+                            });
+                        }
+                    });
+                }
+                return false;
+            }/*get movie details of user clicked hyper link */
+            var getLinkInputMovie = function () {
+                $('#overview').empty();
+                var film = $('#search_query').val();
+                if (film == '') {
+                } else {
+                    $('#poster').html('<div class="alert"><strong>Loading...</strong></div>');
+                    $.getJSON("https://api.themoviedb.org/3/search/movie?api_key=985cf39247295da2657f152566099ace&query=" + film + "&callback=?", function (json) {
+
+                        if (json != "Nothing found.") {
+                            $('#overview').append('');
+                            if (json.results.length >= 1) {
+                                $('#poster').html('<img src=\"http://image.tmdb.org/t/p/w500/' + json.results[0].poster_path + '\" class=\"img-responsive\" >');
+                                if (json.results[0].release_date != null && json.results[0].release_date != '') {
+                                    $('#overview').html('<p style="border-radius:15px 15px 15px 15px;"><strong><u>' + '"' + json.results[0].title + '(' + 'Year -' + json.results[0].release_date.substring(0, 4) + ', Rating-' + json.results[0].vote_average + ')' + '"' + ' Overview: </u></strong>' + json.results[0].overview + '</p>');
+                                }
+                                else {
+                                    $('#overview').html('<p style="border-radius:15px 15px 15px 15px;"><strong><u>' + '"' + json.results[0].title + '(...?' + ', Rating- ' + json.results[0].vote_average + ' )' + '"' + ' Overview: </u></strong>' + json.results[0].overview + '</p>');
+
+                                }
+                            }
+                        }
+                    });
+                }
+                return true;
+            }
+            $('#search').click(getPoster);
+            $('#search_query').keyup(function (event) {
+                if (event.keyCode == 13) {
+                    getPoster();
+                }
+            });
+            $('#search_query').blur(function (event) {
+                getPoster();
+            });
+            $('#clear').click(function (event) {
+                event.preventDefault();
+                $('#poster').empty();
+                $('#overview').empty();
+                $('#otherMovies').empty();
+                $('#search_query').val('');
+            });
+            $('#play').click(function (event) {
+                if ($('#search_query').val() == '') {
+                    $('#poster').html('<div class="alert"><strong>Oops!</strong> Try adding something into the search field.</div>');
+                    return false
+                }
+                $('#search_query').val('intitle:' + $('#search_query').val() + ' ' + 'movie' + ',' + 'long');
+                return true;
+            });
+            $(document).on("click", "a", function () {
+                $('#term').val('');
+                $('#term').hide();
+                $('#search_query').show();
+                $('#search_query').val($(this).text().substring(0, $(this).text().indexOf('(')));
+                getLinkInputMovie();
+                $("html, body").animate({ scrollTop: 0 }, "slow");
+                return true;
+            });
+
+        });
+    </script>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Lobster);
+        @import url(https://fonts.googleapis.com/css?family=Lato);
+        @import url(https://fonts.googleapis.com/css?family=oswald);
+
+        body {
+            /*background: url(https://static.pexels.com/photos/1043/red-building-industry-bricks-large.jpg) no-repeat;*/
+            background-color: black;
+            background-size: cover;
+            color: #FFF;
+            font-family: 'Lato';
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .img-responsive {
+            width: 90vw;
+            max-width: 500px;
+            max-height: 550px;
+        }
+
+        h1 {
+            font-family: 'Lobster';
+            font-size: 8rem; /*Desktop Font*/
+            /*font-size: 4rem;*/ /*Mobile Font*/
+            color: orange;
+            /*transform: rotate(-4deg);*/
+        }
+
+        .alert {
+            margin-top: 10px;
+        }
+
+        .container {
+            display: flexbox;
+            align-items: flex-start;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .search {
+            flex: 1;
+            text-align: center;
+            -webkit-appearance: searchfield;
+            -webkit-appearance: searchfield-cancel-button;
+        }
+
+        button {
+            background-color: black;
+            border: 0;
+            color: white;
+            font-size: 2em;
+            padding: 10px;
+            margin-left: 0;
+            font-family: 'oswald';
+            border-radius: 5px 5px 5px 5px;
+        }
+
+        input[type=text] {
+            background: rgba(255, 255, 255, 0.5);
+            outline: none;
+            border: 3px solid black;
+            color: maroon;
+            font-family: 'Lato';
+            font-size: 2em;
+            padding: 8px;
+            margin-right: 0;
+            text-align: center;
+            border-radius: 5px 5px 5px 5px;
+        }
+
+        ::-webkit-input-placeholder {
+            color: black;
+        }
+
+        :-moz-placeholder {
+            /* Firefox 18- */
+            color: black;
+        }
+
+        ::-moz-placeholder {
+            /* Firefox 19+ */
+            color: black;
+        }
+
+        :-ms-input-placeholder {
+            color: black;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        .alert {
+            background-color: rgba(0, 0, 0, 0.95);
+            display: inline;
+            padding: 10px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <form action="http://www.youtube.com/results" method="get" target="_blank">
+        <div class="container" style="width:100%;height:100%;margin-left:2%;">
+
+            <div class="search">
+                <h1><u>Movie Search</u>  ...</h1>
+                <!-- <h1>  ...</h1>-->
+                <div id="fetch">
+                    <input type="text" id="search_query" name="search_query" />
+                    <button id="search">Find</button>
+                    <button id="play" name="play">Play</button>
+                    <button id="clear" name="clear">Clear</button>
+                </div>
+            </div>
+            <div class="row" style="width:100%;flood-color:red;border-width:2px;margin-left:-2%;height:2px;margin-bottom:2px;background-color:#7B9AAE;border:1px solid orange;"></div>
+            <div class="row" style="margin-top:1%;border-width:0px">
+                <div class="col-lg-4" id="poster"> </div>
+                <!-- Desktop Font-->
+                <div class="col-lg-7" style="font-size: 2em;color: white;border-radius:35px 35px 35px 35px;" id="overview"></div>
+                <div class="col-lg-7" style="font-size: 2em;color: white;border-radius:15px 15px 15px 15px;margin-left:1px" id="otherMovies"></div>
+                <!-- Mobile Font-->
+                <!-- <div class="col-lg-7" style="font-size: medium;color: white;border-radius:35px 35px 35px 35px;" id="overview">  </div>
+                 <div class="col-lg-7" style="font-size: medium;color: white;border-radius:15px 15px 15px 15px;margin-left:1px" id="otherMovies"></div>-->
+            </div>
+        </div>
+        <!--</div>-->
+    </form>
+</body>
+</html>

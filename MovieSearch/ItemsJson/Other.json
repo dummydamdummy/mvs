@@ -1,0 +1,44 @@
+{
+  "Other": [
+    {
+      "OtherItem": "Sugar",
+      "Units": "LBS",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/CSIRO_ScienceImage_10529_Sugarcane_and_bowl_of_sugar.jpg/1200px-CSIRO_ScienceImage_10529_Sugarcane_and_bowl_of_sugar.jpg"
+    },
+    {
+      "OtherItem": "Salt",
+      "Units": "LBS",
+      "url": "https://resize.indiatvnews.com/en/resize/newbucket/715_-/2020/03/salt-1585304899.jpg"
+    },
+    {
+      "OtherItem": "Jagiri",
+      "Units": "LBS",
+      "url": "https://tap-assets-prod.dexecure.net/wp-content/uploads/sites/9/2016/05/gur-benefits.jpg?resize=h412"
+    },
+    {
+      "OtherItem": "Semiya",
+      "Units": "LBS",
+      "url": "https://lh3.googleusercontent.com/proxy/z3sp-KkHe3F8xloQ09BCsJmrfcHXYZdfQiGgjmsuwhlz57DsnULqSs0JmXu1AC6WGYYhTNiPkEyqbaEsD6vN4ltPFotpHjytLAcUfDSGwey_90QFwaEXqjqT"
+    },
+    {
+      "OtherItem": "Pickle",
+      "Units": "OZ",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRX930FFoXigOBA9OqqF14hIR62ACG_WNWXZsGLZ1lHrH2cNocWdeoRGDFILMFZYOzcavgk9prTag6FpQarFQ9jGIDTsQdV_JY3RROGDsg&usqp=CAU&ec=45714080"
+    },
+    {
+      "OtherItem": "Maagi",
+      "Units": "Count",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Mama_instant_noodle_block.jpg"
+    },
+    {
+      "OtherItem": "Tea Powder",
+      "Units": "OZ",
+      "url": "https://cpimg.tistatic.com/06121553/b/4/Assam-Tea.jpg"
+    },
+    {
+      "OtherItem": "Coffee Powder",
+      "Units": "OZ",
+      "url": "https://www.coffeecrossroads.com/wp-content/uploads/coffee-cup-and-beans.jpg"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "Dairy": [
+    {
+      "DairyItem": "Milk",
+      "Units": "GAL.",
+      "url": "https://www.pngkit.com/png/full/815-8159221_and-pouring-of-effect-milk-black-white-clipart.png"
+    },
+    {
+      "DairyItem": "Curd",
+      "Units": "LBS",
+      "url": "https://www.rachnacooks.com/wp-content/uploads/2019/08/homemade-dahi3.jpg"
+    },
+    {
+      "DairyItem": "Butter ",
+      "Units": "OZ",
+      "url": "https://thumbs.dreamstime.com/b/greasy-butter-black-background-greasy-butter-black-background-170067310.jpg"
+    },
+    {
+      "DairyItem": "Cheese",
+      "Units": "OZ",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcREPlVuu_5FGduU_jm6RcDhsKAuP-KZFaH9fg&usqp=CAU"
+    },
+    {
+      "DairyItem": "Ghee",
+      "Units": "OZ",
+      "url": "https://4.imimg.com/data4/JB/CD/ANDROID-62603555/product-500x500.jpeg"
+    },
+    {
+      "DairyItem": "Buttermilk",
+      "Units": "GAL.",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQf5KhzUuYwNprdtjnZ6Vq9SEW0ShyvB7Z-eg&usqp=CAU"
+    },
+    {
+      "DairyItem": "Paneer",
+      "Units": "OZ",
+      "url": "https://4.imimg.com/data4/TW/IC/MY-33299067/pure-paneer-500x500.jpg"
+    },
+    {
+      "DairyItem": "Whipped Cream",
+      "Units": "OZ",
+      "url": "https://www.cookingclassy.com/wp-content/uploads/2019/04/whipped-cream-1-500x500.jpg"
+    }
+  ]
+}

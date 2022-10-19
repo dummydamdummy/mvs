@@ -1,0 +1,89 @@
+{
+  "MeatNSeaFood": [
+    {
+      "MeatNSeaFoodItem": "Chicken Whole",
+      "Units": "LBS",
+      "url": "https://static.connect2india.com/c2icd/company_resources/3105836/images/products/product-chicken-meat.png"
+    },
+    {
+      "MeatNSeaFoodItem": "Chicken Breast",
+      "Units": "LBS",
+      "url": "https://images-na.ssl-images-amazon.com/images/I/81A0GeJcadL._AC_SX522_.jpg"
+    },
+    {
+      "MeatNSeaFoodItem": "Drum Sticks ",
+      "Units": "LBS",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR63WC9OGmledJqkb95NDoBnKhEzVn2U8OraQ&usqp=CAU"
+    },
+    {
+      "MeatNSeaFoodItem": "Chicken Keema ",
+      "Units": "LBS",
+      "url": "https://cdn.powered-by-nitrosell.com/product_images/26/6349/mp050805.jpg"
+    },
+    {
+      "MeatNSeaFoodItem": "Goat Meat",
+      "Units": "LBS",
+      "url": "https://img.tradewheel.com/uploads/images/products/5/6/premium-quality-100-halal-freshfrozen-sheepgoatlamb-meatcarcass-for-sale0-0842057001553936224.jpg"
+    },
+    {
+      "MeatNSeaFoodItem": "Goat Shoulder",
+      "Units": "LBS",
+      "url": "https://www.mrlamb.in/wp-content/uploads/2019/02/Mutton_Shoulder.jpg"
+    },
+    {
+      "MeatNSeaFoodItem": "Mutton Keema",
+      "Units": "LBS",
+      "url": "https://images.heb.com/is/image/HEBGrocery/001595105"
+    },
+    {
+      "MeatNSeaFoodItem": "Goat Liver",
+      "Units": "LBS",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSb3Hx9iP_ZrFUnj3UjAtxehH5NdcOe16Y7_w&usqp=CAU"
+    },
+    {
+      "MeatNSeaFoodItem": "Goat Head and Legs",
+      "Units": "LBS",
+      "url": "https://kadunasolutions.com/wp-content/uploads/2020/07/Goat-Head-Legs.jpg"
+    },
+    {
+      "MeatNSeaFoodItem": "Fish",
+      "Units": "LBS",
+      "url": "https://www.foodsafetynews.com/files/2019/05/dreamstime_fish-carp-550x267.jpg"
+    },
+    {
+      "MeatNSeaFoodItem": "Shrimp",
+      "Units": "LBS",
+      "url": "https://static.wixstatic.com/media/fdad2d_9be22471ae1d466d914f60ee106ca0e7~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
+    },
+    {
+      "MeatNSeaFoodItem": "Prawns",
+      "Units": "LBS",
+      "url": "https://www.tierrafertil.com.mx/wp-content/uploads/2018/06/JUNIO-29-CAMARON-HONDURAS-696x385.jpg"
+    },
+    {
+      "MeatNSeaFoodItem": "Crab",
+      "Units": "LBS",
+      "url": "https://p0.pxfuel.com/preview/587/793/233/toothed-crab-animal-nature.jpg"
+    },
+    {
+      "MeatNSeaFoodItem": "Lobster",
+      "Units": "LBS",
+      "url": "https://us.123rf.com/450wm/chaveeku/chaveeku2002/chaveeku200200019/139717067-close-up-steamed-canadian-lobster-on-isolted-black-background-red-canadian-lobster-cooked-lobster.jpg?ver=6"
+    },
+    {
+      "MeatNSeaFoodItem": "Oyster",
+      "Units": "LBS",
+      "url": "https://us.123rf.com/450wm/cloudmineamsterdam/cloudmineamsterdam1701/cloudmineamsterdam170101834/70360336-ouvrir-des-hu%C3%AEtres-sur-fond-noir.jpg?ver=6"
+    },
+    {
+      "MeatNSeaFoodItem": "Eggs",
+      "Units": "Count",
+      "url": "https://freerangestock.com/sample/6607/eggs.jpg"
+    },
+    {
+      "MeatNSeaFoodItem": "Turkey",
+      "Units": "LBS",
+      "url": "https://milkrun.imgix.net/production/product/b3acff34395ce843-raw-turkey.jpg?w=330&h=330&dpr=2&fit=crop&auto=format&fm=jpg&q=65"
+    }
+  ]
+}
